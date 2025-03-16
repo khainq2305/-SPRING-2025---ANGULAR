@@ -14,12 +14,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import { MaterialModule } from 'src/app/material.module';
 import { CommonModule } from '@angular/common';
-
+import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-nav-item',
   imports: [TranslateModule, TablerIconsModule, MaterialModule, CommonModule],
   templateUrl: './nav-item.component.html',
-  styleUrls: [],
+  styleUrls: ['./nav-item.component.scss'], // Liên kết SCSS vào component
+  standalone: true, // Nếu bạn dùng Angular 15+ với Standalone Components
+  encapsulation: ViewEncapsulation.None, // Bỏ chặn CSS
 })
 export class AppNavItemComponent implements OnChanges {
   @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -29,7 +31,8 @@ export class AppNavItemComponent implements OnChanges {
   expanded: any = false;
 
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
-  @Input() depth: any;
+  @Input() depth: number = 0; // Mặc định là 0 nếu không truyền
+
 
   constructor(public navService: NavService, public router: Router) {}
 
@@ -60,7 +63,10 @@ export class AppNavItemComponent implements OnChanges {
       }
     }
   }
-
+  ngOnInit() {
+    console.log('Depth của item:', this.depth);
+  }
+  
   openExternalLink(url: string): void {
     if (url) {
       window.open(url, '_blank');
