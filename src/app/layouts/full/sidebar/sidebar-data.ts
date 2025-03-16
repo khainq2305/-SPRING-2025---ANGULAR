@@ -1,5 +1,5 @@
 import { NavItem } from './nav-item/nav-item';
-
+// NavItem là một interface định nghĩa cấu trúc của từng mục menu.
 export const navItems: NavItem[] = [
   {
     navCap: 'Home',
@@ -35,6 +35,31 @@ export const navItems: NavItem[] = [
     route: '/ui-components/chips',
   },
   {
+<<<<<<< HEAD
+=======
+    displayName: 'Lists',
+    iconName: 'list-details',
+    route: '/ui-components/lists',
+  },
+  {
+    displayName: 'Sản phẩm',
+    iconName: 'shopping-cart', // Thay đổi icon theo thư viện bạn dùng
+    route: '/ui-components/product',
+    children: [
+      {
+        displayName: 'Danh sách sản phẩm',
+        iconName: 'list',
+        route: '/ui-components/product/product-list',
+      },
+      {
+        displayName: 'Thêm sản phẩm',
+        iconName: 'plus',
+        route: '/ui-components/product/product-create',
+      }
+    ]
+  },
+  {
+>>>>>>> bac9ede ([Admin - UI] Implement product CRUD interface)
     displayName: 'Forms',
     iconName: 'clipboard-text',
     route: '/ui-components/forms',
@@ -44,6 +69,7 @@ export const navItems: NavItem[] = [
     iconName: 'table',
     route: '/ui-components/tables',
   },
+  
   {
     displayName: 'User',
     iconName: 'user', 
