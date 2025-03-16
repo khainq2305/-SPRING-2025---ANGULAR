@@ -33,6 +33,26 @@ export const navItems: NavItem[] = [
     route: '/ui-components/tables',
   },
   {
+    displayName: 'User',
+    iconName: 'user', 
+    route: '/ui-components/user',
+    children: [
+      {
+        displayName: 'User-list',
+        iconName: 'list', 
+        route: '/ui-components/user/user-list',
+      },
+
+      {
+        displayName: 'User-create',
+        iconName: 'clipboard-text', 
+        route: '/ui-components/user/user-create',
+      },
+     
+      
+    ],
+  },
+  {
     navCap: 'Auth',
   },
   {
