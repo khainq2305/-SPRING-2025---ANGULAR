@@ -13,14 +13,26 @@ export const navItems: NavItem[] = [
     navCap: 'Ui Components',
   },
   {
+    displayName: 'Danh mục',
+    iconName: 'list-details',
+    route: '/ui-components/category',
+    children: [
+      {
+        displayName: 'Danh sách',
+        iconName: 'point',
+        route: '/ui-components/category/list',
+      },
+      {
+        displayName: 'Thêm mới',
+        iconName: 'point',
+        route: '/ui-components/category/add',
+      },
+    ],
+  },
+  {
     displayName: 'Chips',
     iconName: 'info-circle',
     route: '/ui-components/chips',
-  },
-  {
-    displayName: 'Lists',
-    iconName: 'list-details',
-    route: '/ui-components/lists',
   },
   {
     displayName: 'Forms',
