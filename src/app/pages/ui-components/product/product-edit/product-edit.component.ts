@@ -28,21 +28,21 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     MatCheckboxModule,
     MatSlideToggleModule,
     MatIconModule,
-    EditorModule // ✅ TinyMCE cho mô tả sản phẩm
+    EditorModule 
   ],
   templateUrl: './product-edit.component.html',
   styleUrls: ['./product-edit.component.scss']
 })
 export class ProductEditComponent {
-  productImages: string[] = []; // ✅ Biến lưu danh sách ảnh sản phẩm
-  editorConfig = { // ✅ Cấu hình TinyMCE
+  productImages: string[] = []; 
+  editorConfig = { 
     height: 200,
     menubar: false,
     plugins: 'lists link image',
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent'
   };
 
-  // ✅ Hàm tải ảnh
+  
   onImageUpload(event: any): void {
     const file = event.target.files[0];
     if (file) {

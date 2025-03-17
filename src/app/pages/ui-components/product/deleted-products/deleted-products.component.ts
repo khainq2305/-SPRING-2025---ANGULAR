@@ -28,7 +28,7 @@ import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-di
     MatSelectModule,
     MatInputModule,
     FormsModule,
-    MatDialogModule // Import MatDialogModule
+    MatDialogModule 
   ],
   templateUrl: './deleted-products.component.html',
   styleUrls: ['./deleted-products.component.scss']
@@ -66,7 +66,7 @@ export class DeletedProductsComponent {
       deletedAt: new Date('2025-03-14')
     }
   ];
-// ✅ Hàm mở hộp thoại xác nhận xóa
+
 confirmDelete(product: any) {
   const dialogRef = this.dialog.open(ConfirmDialogComponent, {
     width: '400px',
@@ -79,13 +79,13 @@ confirmDelete(product: any) {
     }
   });
 }
-  filteredProducts = [...this.deletedProducts];  // ✅ Thêm dòng này
-// ✅ Hàm khôi phục sản phẩm
+  filteredProducts = [...this.deletedProducts];  
+
 restoreProduct(product: any) {
   alert(`Khôi phục sản phẩm: ${product.name}`);
 }
 
-// ✅ Hàm xóa vĩnh viễn sản phẩm
+
 deleteForever(product: any) {
   if (confirm(`Bạn có chắc muốn xóa vĩnh viễn sản phẩm "${product.name}" không?`)) {
     alert(`Đã xóa vĩnh viễn sản phẩm: ${product.name}`);

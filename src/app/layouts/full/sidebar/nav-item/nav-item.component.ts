@@ -31,8 +31,7 @@ export class AppNavItemComponent implements OnChanges {
   expanded: any = false;
 
   @HostBinding('attr.aria-expanded') ariaExpanded = this.expanded;
-  @Input() depth: number = 0; // Mặc định là 0 nếu không truyền
-
+  @Input() depth: any;
 
   constructor(public navService: NavService, public router: Router) {}
 

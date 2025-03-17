@@ -4,20 +4,12 @@
 </div>
 } @if(!item.navCap && !item.external) {
 <a mat-list-item (click)="onItemSelected(item)" [ngClass]="{
-  'menu-list-item': true,
-  'sub-item': depth > 0, 
-  'activeMenu': item.route ? router.isActive(item.route, true) : false,
-  'expanded': expanded,
-  'disabled': item.disabled
-  }" class="menu-list-item sub-item">
+    activeMenu: item.route ? router.isActive(item.route, true) : false,
+    expanded: expanded,
+    disabled: item.disabled
+  }" class="menu-list-item">
   <i-tabler class="routeIcon" name="{{ item.iconName }}" matListItemIcon></i-tabler>
-  <span class="hide-menu">
-    {{ item.displayName }}
-  </span>
-  
-  
-
-
+  <span class="hide-menu">{{ item.displayName }}</span>
   
   @if(item.children && item.children.length) {
   <span class="arrow-icon" fxFlex>
